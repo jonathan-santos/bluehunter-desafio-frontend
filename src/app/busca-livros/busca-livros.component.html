@@ -1,0 +1,8 @@
+<div>
+  <div>
+    <input [(ngModel)]='nomeLivro' type='text' placeholder='nome do livro'>
+    <input (click)='pesquisar()' type="button" value="pesquisar">
+  </div>
+  <app-livro *ngFor='let livro of livros' [livro]='livro'></app-livro>
+  <span *ngIf='livroNaoEncontrado'>Nenhum livro com esse nome foi encontado, tente outro ou verifique se o digitou corretamente</span>
+</div>

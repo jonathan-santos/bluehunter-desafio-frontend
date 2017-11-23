@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { BuscaClientesComponent } from './busca-clientes/busca-clientes.component';
 import { LivroComponent } from './livro/livro.component';
+import { BuscaLivrosComponent } from './busca-livros/busca-livros.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { LivroComponent } from './livro/livro.component';
     AppComponent,
     ClienteComponent,
     BuscaClientesComponent,
-    LivroComponent
+    LivroComponent,
+    BuscaLivrosComponent
   ],
   imports: [
     BrowserModule,
