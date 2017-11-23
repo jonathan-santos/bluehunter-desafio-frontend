@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Livro from '../../models/livro';
+import Livro, { ParseBook } from '../../models/livro';
 import Livros from '../../mock/livros';
 
 @Component({
@@ -9,6 +9,8 @@ import Livros from '../../mock/livros';
 })
 
 export class BuscaLivrosComponent implements OnInit {
+  private urlApiLivros = ' https://dummy-blue-hunter.mybluemix.net/book/by-title/'
+  
   nomeLivro : string = ''
   livros : Livro[] = []
   livroNaoEncontrado : boolean
@@ -22,10 +24,20 @@ export class BuscaLivrosComponent implements OnInit {
   }
 
   getLivros() : void {
-    this.livros = Livros.filter((item) => {
-      return item.titulo.toUpperCase().includes(this.nomeLivro.toUpperCase());
-    });
-    this.livroNaoEncontrado = this.livros.length < 1;
+    this.livroNaoEncontrado = false;
+    this.livros = [];
+    let request = new XMLHttpRequest();
+    request.open('GET', this.urlApiLivros + this.nomeLivro);
+    request.send();
+    request.onreadystatechange = () => {
+      if(request.readyState == request.DONE) {
+        let clients = JSON.parse(request.response);
+        for(let i = 0; i < clients.length; i++) {
+          this.livros.push(ParseBook(clients[i]));
+        }
+        this.livroNaoEncontrado = this.livros.length < 1;
+      }
+    }
   }
 
   constructor() { }

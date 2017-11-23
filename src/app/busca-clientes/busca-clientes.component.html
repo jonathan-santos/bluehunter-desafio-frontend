@@ -4,5 +4,5 @@
     <input (click)='pesquisar()' type="button" value="pesquisar">
   </div>
   <app-cliente *ngFor='let cliente of clientes' [cliente]='cliente'></app-cliente>
-  <span *ngIf='clienteNaoEncontado'>Nenhum cliente com esse nome foi encontado, tente outro ou verifique se o digitou corretamente</span>
+  <span *ngIf='clienteNaoEncontrado'>Nenhum cliente com esse nome foi encontado, tente outro ou verifique se o digitou corretamente</span>
 </div>

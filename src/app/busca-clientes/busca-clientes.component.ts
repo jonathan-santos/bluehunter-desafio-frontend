@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Cliente, { ParseClient } from '../../models/cliente';
 import Clientes from '../../mock/clientes';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-busca-clientes',
@@ -15,7 +13,7 @@ export class BuscaClientesComponent implements OnInit {
   
   nomeCliente : string = ''
   clientes : Cliente[] = []
-  clienteNaoEncontado : boolean
+  clienteNaoEncontrado : boolean
 
   pesquisar() : void {
     if(this.nomeCliente) {
@@ -26,7 +24,7 @@ export class BuscaClientesComponent implements OnInit {
   }
 
   getClientes() : void {
-    this.clienteNaoEncontado = false;
+    this.clienteNaoEncontrado = false;
     this.clientes = [];
     let request = new XMLHttpRequest();
     request.open('GET', this.urlApiClientes + this.nomeCliente);
@@ -37,12 +35,12 @@ export class BuscaClientesComponent implements OnInit {
         for(let i = 0; i < clients.length; i++) {
           this.clientes.push(ParseClient(clients[i]));
         }
-        this.clienteNaoEncontado = this.clientes.length < 1;
+        this.clienteNaoEncontrado = this.clientes.length < 1;
       }
     }
   }
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit() { }
 }
