@@ -8,8 +8,8 @@ import Cliente from '../../models/cliente';
 })
 
 export class ClienteComponent implements OnInit {
-  @Input() cliente: Cliente;
-  
+  @Input() cliente : Cliente; 
+
   constructor() { }
 
   ngOnInit() {}
