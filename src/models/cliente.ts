@@ -7,3 +7,15 @@ export default class Cliente {
     genero: string
     idade: number
 }
+
+export const ParseClient = (item) : Cliente => {
+    return {
+        id: item.id,
+        nomeCompleto: item.fullName,
+        nomeUsuario: item.username,
+        email: item.email,
+        telefone: item.phone,
+        genero: item.gender,
+        idade: item.age
+    };
+}
