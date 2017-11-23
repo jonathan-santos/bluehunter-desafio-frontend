@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import Cliente from '../models/cliente';
-import Clientes from '../mock/clientes';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +6,4 @@ import Clientes from '../mock/clientes';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
-  clientes : Cliente[] = Clientes
-}
+export class AppComponent {}

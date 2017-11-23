@@ -1,0 +1,7 @@
+<div>
+  <div>
+    <input [(ngModel)]='nomeCliente' type='text' placeholder='nome do cliente'>
+    <input (click)='pesquisar()' type="button" value="pesquisar">
+  </div>
+  <app-cliente *ngFor='let cliente of clientes' [cliente]='cliente'></app-cliente>
+</div>
