@@ -6,13 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { BuscaClientesComponent } from './busca-clientes/busca-clientes.component';
+import { LivroComponent } from './livro/livro.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
-    BuscaClientesComponent
+    BuscaClientesComponent,
+    LivroComponent
   ],
   imports: [
     BrowserModule,
