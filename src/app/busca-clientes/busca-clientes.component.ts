@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import Cliente, { ParseClient } from '../../models/cliente';
 import Clientes from '../../mock/clientes';
 
@@ -14,6 +15,10 @@ export class BuscaClientesComponent implements OnInit {
   nomeCliente : string = ''
   clientes : Cliente[] = []
   clienteNaoEncontrado : boolean
+
+  goBack(): void {
+    this.location.back();
+  }
 
   pesquisar() : void {
     if(this.nomeCliente) {
@@ -40,7 +45,7 @@ export class BuscaClientesComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() { }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import Livro, { ParseBook } from '../../models/livro';
 import Livros from '../../mock/livros';
 
@@ -14,6 +15,10 @@ export class BuscaLivrosComponent implements OnInit {
   nomeLivro : string = ''
   livros : Livro[] = []
   livroNaoEncontrado : boolean
+
+  goBack(): void {
+    this.location.back();
+  }
 
   pesquisar() : void {
     if(this.nomeLivro) {
@@ -40,7 +45,7 @@ export class BuscaLivrosComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit() { }
 }

@@ -7,6 +7,8 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { BuscaClientesComponent } from './busca-clientes/busca-clientes.component';
 import { LivroComponent } from './livro/livro.component';
 import { BuscaLivrosComponent } from './busca-livros/busca-livros.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -15,11 +17,13 @@ import { BuscaLivrosComponent } from './busca-livros/busca-livros.component';
     ClienteComponent,
     BuscaClientesComponent,
     LivroComponent,
-    BuscaLivrosComponent
+    BuscaLivrosComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
