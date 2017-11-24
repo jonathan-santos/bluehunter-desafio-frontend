@@ -5,7 +5,7 @@ import Clientes from '../../mock/clientes';
 @Component({
   selector: 'app-busca-clientes',
   templateUrl: './busca-clientes.component.html',
-  styleUrls: ['./busca-clientes.component.css']
+  styleUrls: ['./busca-clientes.component.less']
 })
 
 export class BuscaClientesComponent implements OnInit {

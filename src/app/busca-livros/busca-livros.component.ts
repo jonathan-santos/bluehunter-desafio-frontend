@@ -5,7 +5,7 @@ import Livros from '../../mock/livros';
 @Component({
   selector: 'app-busca-livros',
   templateUrl: './busca-livros.component.html',
-  styleUrls: ['./busca-livros.component.css']
+  styleUrls: ['./busca-livros.component.less']
 })
 
 export class BuscaLivrosComponent implements OnInit {
