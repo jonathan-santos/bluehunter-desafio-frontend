@@ -16,4 +16,4 @@ Para executar o site em modo de desenvolvimento é só usar o comando ```ng serv
 Para executar uma build do site é necessário rodar o comando ```ng build --prod```, que resultará na pasta dist com os conteúdos do site compilados e minificados
 
 ### Deploy
-Para fazer o deploy da aplicação no github pages é necessário apenas rodar o comando ```ng github-pages:deploy ```
+Para fazer o deploy da aplicação no github pages é necessário apenas trocar o nome da pasta dist resultante do Build para docs e então fazer um push para a branch master do projeto
