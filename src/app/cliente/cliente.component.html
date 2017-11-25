@@ -1,14 +1,5 @@
-<div>
-  <div>
-    <span class="nome-completo">{{cliente.nomeCompleto}}</span>
-    <span class="nome-usuario">{{cliente.nomeUsuario}}</span>
-  </div>
-  <div>
-    <span class="email">{{cliente.email}}</span>
-    <span class="telefone">{{cliente.telefone}}</span>
-  </div>
-  <div>
-    <span class="genero">{{cliente.genero}}</span>
-    <span class="idade">{{cliente.idade}}</span>
-  </div>
+<div class="cliente">
+  <div>{{cliente.nomeCompleto}} ({{cliente.idade}}), {{cliente.genero}}</div>
+  <div>{{cliente.email}}</div>
+  <div>{{cliente.nomeUsuario}}, {{cliente.telefone}}</div>
 </div>

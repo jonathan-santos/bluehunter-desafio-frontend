@@ -1,9 +1,14 @@
 <div>
-  <button (click)='goBack()'>voltar</button>
-  <div>
-    <input [(ngModel)]='nomeCliente' type='text' placeholder='nome do cliente'>
-    <input (click)='pesquisar()' type="button" value="pesquisar">
+  <div class="barra-navegacao">
+    <button (click)='goBack()' class="voltar">voltar</button>
+    <h1>Busca de clientes por nome</h1>
   </div>
-  <app-cliente *ngFor='let cliente of clientes' [cliente]='cliente'></app-cliente>
-  <span *ngIf='clienteNaoEncontrado'>Nenhum cliente com esse nome foi encontado, tente outro ou verifique se o digitou corretamente</span>
+  <div class="barra-pesquisa">
+    <input [(ngModel)]='nomeCliente' (change)='pesquisar()' type='text' placeholder='nome do cliente'>
+    <button (click)='pesquisar()'>pesquisar</button>
+  </div>
+  <div class="itens-pesquisa">
+    <app-cliente *ngFor='let cliente of clientes' [cliente]='cliente'></app-cliente>
+    <p *ngIf='clienteNaoEncontrado' class="nenhum-resultado">Nenhum cliente com esse nome foi encontado, tente outro</p>
+  </div>
 </div>

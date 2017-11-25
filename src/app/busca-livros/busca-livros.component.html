@@ -1,9 +1,14 @@
 <div>
-  <button (click)='goBack()'>voltar</button>
-  <div>
-    <input [(ngModel)]='nomeLivro' type='text' placeholder='nome do livro'>
-    <input (click)='pesquisar()' type="button" value="pesquisar">
+    <div class="barra-navegacao">
+      <button (click)='goBack()' class="voltar">voltar</button>
+      <h1>Busca de livros por nome</h1>
+    </div>
+  <div class="barra-pesquisa">
+    <input [(ngModel)]='nomeLivro' (change)='pesquisar()' type='text' placeholder='nome do livro'>
+    <button (click)='pesquisar()'>pesquisar</button>
   </div>
-  <app-livro *ngFor='let livro of livros' [livro]='livro'></app-livro>
-  <span *ngIf='livroNaoEncontrado'>Nenhum livro com esse nome foi encontado, tente outro ou verifique se o digitou corretamente</span>
+  <div class="itens-pesquisa">
+    <app-livro *ngFor='let livro of livros' [livro]='livro'></app-livro>
+    <p *ngIf='livroNaoEncontrado' class="nenhum-resultado">Nenhum livro com esse nome foi encontado, tente outro</p>
+  </div>
 </div>
