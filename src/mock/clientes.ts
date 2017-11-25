@@ -1,6 +1,6 @@
-import Cliente from '../models/cliente';
+import { Cliente } from '../models/cliente';
 
-const Clientes : Cliente[] =
+export const Clientes : Cliente[] =
 [{
     id: 0,
     nomeCompleto: 'Jonathan Augusto dos Santos',
@@ -26,5 +26,3 @@ const Clientes : Cliente[] =
     genero: 'masculino',
     idade: 24
 }];
-
-export default Clientes;

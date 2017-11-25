@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import Cliente, { ParseClient } from '../../models/cliente';
-import Clientes from '../../mock/clientes';
+import { Cliente } from '../../models/cliente';
+import { Clientes } from '../../mock/clientes';
 
 @Component({
   selector: 'app-busca-clientes',
@@ -38,7 +38,7 @@ export class BuscaClientesComponent implements OnInit {
       if(request.readyState == request.DONE) {
         let clients = JSON.parse(request.response);
         for(let i = 0; i < clients.length; i++) {
-          this.clientes.push(ParseClient(clients[i]));
+          this.clientes.push(Cliente.parseClient(clients[i]));
         }
         this.clienteNaoEncontrado = this.clientes.length < 1;
       }

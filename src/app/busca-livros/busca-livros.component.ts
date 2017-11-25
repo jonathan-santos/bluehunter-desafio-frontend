@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import Livro, { ParseBook } from '../../models/livro';
-import Livros from '../../mock/livros';
+import { Livro } from '../../models/livro';
+import { Livros } from '../../mock/livros';
 
 @Component({
   selector: 'app-busca-livros',
@@ -38,7 +38,7 @@ export class BuscaLivrosComponent implements OnInit {
       if(request.readyState == request.DONE) {
         let clients = JSON.parse(request.response);
         for(let i = 0; i < clients.length; i++) {
-          this.livros.push(ParseBook(clients[i]));
+          this.livros.push(Livro.parseBook(clients[i]));
         }
         this.livroNaoEncontrado = this.livros.length < 1;
       }

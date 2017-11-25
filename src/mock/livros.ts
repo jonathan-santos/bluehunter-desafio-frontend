@@ -1,6 +1,6 @@
-import Livro from '../models/livro';
+import { Livro } from '../models/livro';
 
-const Livros : Livro[] =
+export const Livros : Livro[] =
 [{
     id: 0,
     titulo: 'Guia do mochileiro das galáxias',
@@ -23,5 +23,3 @@ const Livros : Livro[] =
     anoPublicado: 1982,
     nota: '4.5/5'
 }];
-
-export default Livros;

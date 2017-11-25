@@ -1,4 +1,4 @@
-export default class Cliente {
+export class Cliente {
     id: number
     nomeCompleto: string
     nomeUsuario: string
@@ -6,16 +6,16 @@ export default class Cliente {
     telefone: string
     genero: string
     idade: number
-}
 
-export const ParseClient = (item) : Cliente => {
-    return {
-        id: item.id,
-        nomeCompleto: item.fullName,
-        nomeUsuario: item.username,
-        email: item.email,
-        telefone: item.phone,
-        genero: item.gender,
-        idade: item.age
-    };
+    static parseClient(item : any) {
+        return {
+            id: item.id,
+            nomeCompleto: item.fullName,
+            nomeUsuario: item.username,
+            email: item.email,
+            telefone: item.phone,
+            genero: item.gender,
+            idade: item.age
+        };
+    }
 }
